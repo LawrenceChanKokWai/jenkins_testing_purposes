@@ -1,0 +1,17 @@
+pipeline {
+    agent { label 'RHEL8' }
+
+    stages {
+        stage('Echo') {
+            steps {
+                echo 'From GIT'
+            }
+        }
+        stage('Name') {
+            steps {
+                //echo("Hello, Mr ${epic_name}")
+                echo("Hello, Mr ${params.epic_name}")
+            }
+        }
+    }
+}
